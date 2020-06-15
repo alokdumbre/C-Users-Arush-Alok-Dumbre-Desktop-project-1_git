@@ -1,0 +1,6 @@
+yum install -y httpd
+echo $(hostname) >> /var/www/html/index.html
+service httpd start
+systemctl enable httpd
+useradd madhuri
+sed -i s/ONBOOT=No/ONBOOT=Yes/ /etc/sysconfig/network-scripts/ifcfg-eth0

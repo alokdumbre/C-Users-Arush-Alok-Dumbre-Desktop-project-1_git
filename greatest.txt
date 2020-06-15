@@ -1,0 +1,64 @@
+[ec2-user@ip-172-31-87-220 scripts]$ a=10
+[ec2-user@ip-172-31-87-220 scripts]$ b=30
+[ec2-user@ip-172-31-87-220 scripts]$ c=20
+[ec2-user@ip-172-31-87-220 scripts]$ d=40
+[ec2-user@ip-172-31-87-220 scripts]$ expr =$((($a+$b)/$c +($b+$c)/$d))
+=3
+[ec2-user@ip-172-31-87-220 scripts]$ cd
+[ec2-user@ip-172-31-87-220 ~]$
+[ec2-user@ip-172-31-87-220 ~]$ sudo yum install bc -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                               | 2.4 kB     00:00
+Package bc-1.06.95-13.amzn2.0.2.x86_64 already installed and latest version
+Nothing to do
+[ec2-user@ip-172-31-87-220 ~]$ bc
+bc 1.06.95
+Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
+This is free software with ABSOLUTELY NO WARRANTY.
+For details type `warranty'.
+10+20
+30
+[ec2-user@ip-172-31-87-220 ~]$ sum=$(echo "($a+$b)/$c + ($b+$c)/$d" | bc)
+[ec2-user@ip-172-31-87-220 ~]$ echo $sum
+3
+[ec2-user@ip-172-31-87-220 ~]$ sum=$(echo "scale=2($a+$b)/$c + ($b+$c)/$d" | bc)
+(standard_in) 1: syntax error
+[ec2-user@ip-172-31-87-220 ~]$ sum=$(echo "scale=2;($a+$b)/$c + ($b+$c)/$d" | bc)
+[ec2-user@ip-172-31-87-220 ~]$ echo $sum
+3.25
+[ec2-user@ip-172-31-87-220 ~]$
+
+
+pi=3.142
+read -p "Enter the value of radius"
+echo $radius
+Area=$($pi )
+
+
+[ec2-user@ip-172-31-87-220 scripts]$ vi lottery.sh
+read -p "Enter your name = " name
+read -p "Enter your Number = " num
+if [$name == "Alok"]
+        if [$num -eq 777]
+        then
+                echo " You have won the lottery Mr $name"
+        else
+                echo "Better luck next time Mr $name"
+        fi
+
+[ec2-user@ip-172-31-87-220 scripts]$ vi greatest_of_three_number
+read -p "Enter value of of n1 = " n1
+read -p "Enter value of of n2 = " n2
+read -p "Enter value of of n3 = " n3
+
+if [n1 > n2] && [n1 > n3]
+then
+echo " $n1 is the greatest number"
+echo " $n1 is the greatest number"
+if [ $n2 >  $n1] && [ $n2 > $n3 ]
+then
+echo " $n2 is the greatest number"
+if [ $n3 >  $n1] && [ $n3 >  $n2 ]
+then
+echo " $n3 is the greatest number"
+

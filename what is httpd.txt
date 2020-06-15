@@ -1,0 +1,8 @@
+What is httpd service Linux?
+Ans:- httpd is the Apache HyperText Transfer Protocol (HTTP) server program. It is designed to be run as a standalone daemon process. When used like this it will create a pool of child processes or threads to handle requests
+
+Daemon Definition. A daemon is a type of program on Unix-like operating systems that runs unobtrusively in the background, rather than under the direct control of a user, waiting to be activated by the occurance of a specific event or condition. ... A process is an executing (i.e., running) instance of a program.
+
+
+hi how r u
+
